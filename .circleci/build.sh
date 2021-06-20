@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Cloning dependencies"
-git clone --depth=1  https://github.com/d4rk-lucif3r/LuciferKernel.git -b NonOC-reb
+git clone --depth=1  https://github.com/phoenix-1708/PhoenixKernel.git -b NonOC-reb
 cd LuciferKernel
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/d4rk-lucif3r/Anykernel3-Tissot.git  --depth=1 AnyKernel
@@ -14,11 +14,11 @@ SEND_DIR="${KERNEL_DIR}/telegram.sh"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 export PATH="$(pwd)/clang/bin:$PATH"
 export ARCH=arm64
-export KBUILD_BUILD_USER=d4rklucif3r
+export KBUILD_BUILD_USER=phoenix-1708
 export KBUILD_BUILD_HOST=circleci
 # Compile plox
 function compile() {
-    make -j$(nproc) O=out ARCH=arm64 lucifer-tissot_defconfig
+    make -j$(nproc) O=out ARCH=arm64 phoenix-tissot_defconfig
     make -j$(nproc) O=out \
                     ARCH=arm64 \
                       CC=clang \
@@ -51,11 +51,11 @@ function compile() {
 # Zipping
 function zipping() {
     cd $REPACK_DIR || exit 1
-    zip -r9 LuciferKernel_V3_NonOC.zip *
+    zip -r9 PhoenixKernel_NonOC.zip *
     cd $SEND_DIR   || exit 1
     echo "Changing Dir to Send FIle"
-    ./telegram -t $TELEGRAM_TOKEN -c $TELEGRAM_CHAT -f $REPACK_DIR/LuciferKernel_V3_NonOC.zip "Zip Sent through CircleCi"
-   #curl https://bashupload.com/LuciferKernel+V3.zip --data-binary @LuciferKernel+V3.zip
+    ./telegram -t $TELEGRAM_TOKEN -c $TELEGRAM_CHAT -f $REPACK_DIR/PhoenixKernel_NonOC.zip "Zip Sent through CircleCi"
+   #curl https://bashupload.com/PhoenixKernel_NonOC.zip --data-binary @PhoenixKernel_NonOC.zip
 }
 compile
 zipping

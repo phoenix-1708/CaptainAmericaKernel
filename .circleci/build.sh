@@ -4,13 +4,11 @@ git clone --depth=1  https://github.com/phoenix-1708/PhoenixKernel.git -b NonOC-
 cd PhoenixKernel
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/phoenix-1708/Anykernel3-Tissot.git  --depth=1 AnyKernel
-git clone https://github.com/fabianonline/telegram.sh.git  -b master
 KERNEL_DIR=$(pwd)
 REPACK_DIR="${KERNEL_DIR}/AnyKernel"
 IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz"
 DTB_T="${KERNEL_DIR}/out/arch/arm64/boot/dts/qcom/msm8953-qrd-sku3-tissot-treble.dtb"
 DTB="${KERNEL_DIR}/out/arch/arm64/boot/dts/qcom/msm8953-qrd-sku3-tissot-nontreble.dtb"
-SEND_DIR="${KERNEL_DIR}/telegram.sh"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 export PATH="$(pwd)/clang/bin:$PATH"
 export ARCH=arm64
@@ -52,10 +50,7 @@ function compile() {
 function zipping() {
     cd $REPACK_DIR || exit 1
     zip -r9 PhoenixKernel_NonOC.zip *
-    cd $SEND_DIR   || exit 1
-    echo "Changing Dir to Send FIle"
-    ./telegram -t $TELEGRAM_TOKEN -c $TELEGRAM_CHAT -f $REPACK_DIR/PhoenixKernel_NonOC.zip "Zip Sent through CircleCi"
-   #curl https://bashupload.com/PhoenixKernel_NonOC.zip --data-binary @PhoenixKernel_NonOC.zip
+   curl https://bashupload.com/PhoenixKernel_NonOC.zip --data-binary @PhoenixKernel_NonOC.zip
 }
 compile
 zipping

@@ -2,17 +2,17 @@ image: ubuntu:18.04
 
 before_script:
   - apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6      git wget python gcc clang libssl-dev repo rsync flex bison gcc-aarch64-linux-gnu
-  - git config --global user.name "d4rklucif3r"
-  - git config --global user.email "lucifer78908@gmail.com"
+  - git config --global user.name "phoenix-1708"
+  - git config --global user.email "harikumar1708@gmail.com"
   - git config --global color.ui true
   - git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh && cd ..
   - cd /home
-  - mkdir lucifer
-  - cd lucifer
+  - mkdir phoenix
+  - cd phoenix
   - mkdir Android                 
   - cd Android
-  - mkdir kernel
-  - cd kernel
+  - mkdir phoenixkernel
+  - cd phoenixkernel
   - wget https://gitlab.com/d4rk-lucif3r/LuciferKernel/-/raw/NonOC-reb/.circleci/build.sh
 stages:
   - build

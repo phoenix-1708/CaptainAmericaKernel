@@ -1,5 +1,5 @@
 #
-# Configuration for initramfs
+#  Configuration for initramfs
 #
 
 config INITRAMFS_SOURCE

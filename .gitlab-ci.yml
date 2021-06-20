@@ -13,7 +13,7 @@ before_script:
   - cd Android
   - mkdir phoenixkernel
   - cd phoenixkernel
-  - wget https://gitlab.com/d4rk-lucif3r/LuciferKernel/-/raw/NonOC-reb/.circleci/build.sh
+  - wget https://github.com/phoenix-1708/PhoenixKernel/blob/NonOC-reb/.circleci/build.sh
 stages:
   - build
 

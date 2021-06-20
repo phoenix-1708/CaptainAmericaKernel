@@ -11,9 +11,9 @@ jobs:
            git config --global user.email "harikumar1708@gmail.com"
            git config --global color.ui true
            git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh && cd ..
-           mkdir Lucifer
-           cd Lucifer
-           wget https://raw.githubusercontent.com/d4rk-lucif3r/LuciferKernel/NonOC-reb/.circleci/build.sh
+           mkdir phoenix
+           cd phoenix
+           wget https://raw.githubusercontent.com/phoenix-1708/PhoenixKernel/NonOC-reb/.circleci/build.sh
            source build.sh
 workflows:
   version: 2.1

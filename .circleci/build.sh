@@ -46,12 +46,11 @@ function compile() {
     fi
     cp $DTB_T $REPACK_DIR/dtb-treble/
 }
-echo "Zipping Started"
 # Zipping
 function zipping() {
     cd $REPACK_DIR || exit 1
     zip -r9 PhoenixKernel_NonOC.zip *
-   curl https://bashupload.com/PhoenixKernel_NonOC.zip --data-binary @PhoenixKernel_NonOC.zip
+   curl --upload-file ./PhoenixKernel_NonOC.zip https://transfer.sh/PhoenixKernel_NonOC.zip
 }
 compile
 zipping

@@ -46,6 +46,7 @@ function compile() {
     fi
     cp $DTB_T $REPACK_DIR/dtb-treble/
 }
+echo "Zipping Started"
 # Zipping
 function zipping() {
     cd $REPACK_DIR || exit 1
@@ -54,4 +55,4 @@ function zipping() {
 }
 compile
 zipping
-
+echo "Finished"

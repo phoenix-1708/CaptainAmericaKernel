@@ -13,6 +13,7 @@ behaviours and the corresponding values of the sysctl nodes -
   Generates undefined instruction abort. Default for instructions that
   have been obsoleted in the architecture, e.g., SWP
 
+
 * Emulate
   Value: 1
   Uses software emulation. To aid migration of software, in this mode

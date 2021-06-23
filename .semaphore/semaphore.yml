@@ -6,7 +6,7 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: Run in Linux environment
     task:
       jobs:
         - name: compile

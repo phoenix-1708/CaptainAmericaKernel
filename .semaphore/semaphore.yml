@@ -5,10 +5,10 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
- - name: Inspect Linux environment
+ - name: Run in Linux environment
    task:
       jobs:
-        - name: Print Envrinment variable
+        - name: compile
           commands: |
            apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev openssl repo rsync flex bison gcc-aarch64-linux-gnu
            git config --global user.name "phoenix-1708"

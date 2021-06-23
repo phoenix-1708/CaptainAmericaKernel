@@ -1,15 +1,13 @@
-
 version: v1.0
-name: Initial Pipeline
+name: The name of the Semaphore 2.0 project
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Run in Linux environment
-    task:
+ - name: Inspect Linux environment
+   task:
       jobs:
-        - name: compile
+        - name: Print Envrinment variable
           commands:
-          echo "compile"
-            - checkout
+            - echo $SEMAPHORE_PIPELINE_ID

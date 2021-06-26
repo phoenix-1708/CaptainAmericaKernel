@@ -54,7 +54,7 @@ function zipping() {
     zip -r9 PhoenixKernel_NonOC.zip *
     cd $SEND_DIR   || exit 1
     echo "Changing Dir to Send FIle"
-    ./telegram -t $1858827137:AAFZVaKOjAhjVyCXfiGgL-SK6dp7_lILZIE -c $-1001521910426 -f $REPACK_DIR/PhoenixKernel_NonOC.zip
+    ./telegram -t 1858827137:AAFZVaKOjAhjVyCXfiGgL-SK6dp7_lILZIE -c -1001521910426 -f $REPACK_DIR/PhoenixKernel_NonOC.zip
 "Zip Sent through Semaphore CI"
    #curl --upload-file ./PhoenixKernel_NonOC.zip https://transfer.sh/PhoenixKernel_NonOC.zip
 }
